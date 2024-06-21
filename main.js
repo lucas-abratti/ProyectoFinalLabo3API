@@ -1,24 +1,27 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+const btnMagico = document.getElementById("btnMagico");
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
-
-setupCounter(document.querySelector('#counter'))
+btnMagico.addEventListener("click", () =>{
+  var url = "http://colormind.io/api/";
+  var data = {
+    model : "default",
+    input : [[ 199, 42, 12 ],"N","N","N",[ 217, 218, 165 ]]
+  }
+  
+  var http = new XMLHttpRequest();
+  
+  http.onreadystatechange = function() {
+    if(http.readyState == 4 && http.status == 200) {
+      var palette = JSON.parse(http.responseText).result;
+      console.log(palette);
+      
+      document.documentElement.style.setProperty("--first-color", `rgb(${palette[0][0]},${palette[0][1]},${palette[0][2]})`);
+      document.documentElement.style.setProperty("--second-color", `rgb(${palette[1][0]},${palette[1][1]},${palette[1][2]})`);
+      document.documentElement.style.setProperty("--third-color", `rgb(${palette[2][0]},${palette[2][1]},${palette[2][2]})`);
+      document.documentElement.style.setProperty("--fourth-color", `rgb(${palette[3][0]},${palette[3][1]},${palette[3][2]})`);
+      document.documentElement.style.setProperty("--fifth-color", `rgb(${palette[4][0]},${palette[4][1]},${palette[4][2]})`);
+    }
+  }
+  
+  http.open("POST", url, true);
+  http.send(JSON.stringify(data));
+})
