@@ -1,13 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta
+      name="description"
+      content="Todos sobre los tragos mas populares y prestigiados"
+    />
+    <meta name="keywords" content="Cockteleria,Tragos,Bebibas,Cocktails,Bar" />
+    <meta
+      name="author"
+      content="tcardelli@frsn.utn.ar,labratti@frsn.utn.ar,jgaeto@frsn.utn.edu.ar"
+    />
+    <script
+      src="https://kit.fontawesome.com/5c0110373c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Coctelería</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header class="header-nav">
+      <nav class="nav-bar">
+        <ul class="ul-nav">
+          <li><a class="a-nav" href="/">HOME</a></li>
+          <li><a class="a-nav" href="/about">ABOUT</a></li>
+          <li><a class="a-nav" href="/games">GAMES</a></li>
+          <li><a class="a-nav" href="/history">HISTORY</a></li>
+          <li><a class="a-nav" href="/contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="seccion-video">
+        <div class="content-wrapper">
+          <h1>The Definitive Cocktail Encyclopaedia!</h1>
+          <p>
+            Expert guide, featuring hand-selected cocktail recipes, games, and
+            more. With information from
+            <img class="p-img" src="logoTheCocktailDB.png" alt="" />
+          </p>
+          <span><a href="#card-area" class="a-nav">FIND NEW DRINKS</a></span>
+        </div>
+
+        <div class="video-wrapper">
+          <video
+            class="video-tag"
+            autoplay
+            muted
+            loop
+            src="videoInicio.mp4"
+          ></video>
+        </div>
+      </section>
+
+      <div id="card-area">
+        <header class="header-cards">
+          <h2>Popular and easy to learn cocktails</h2>
+        </header>
+        <div class="wrapper">
+          <div class="box-area">
+            <div class="box">
+              <img src="negroni.jpg" alt="Negroni" />
+              <div class="overlay">
+                <h3>Negroni</h3>
+                <p>Description</p>
+                <a href="#">Ingredients</a>
+              </div>
+            </div>
+
+            <div class="box">
+              <img src="negroni.jpg" alt="Negroni" />
+              <div class="overlay">
+                <h3>Negroni</h3>
+                <p>Description</p>
+                <a href="#">Ingredients</a>
+              </div>
+            </div>
+
+            <div class="box">
+              <img src="negroni.jpg" alt="Negroni" />
+              <div class="overlay">
+                <h3>Negroni</h3>
+                <p>Description</p>
+                <a href="#">Ingredients</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--footer-->
+    <footer>
+      <div class="contenedor-footer">
+        <div class="contenido-footer">
+          <a href="https://github.com/lucas-abratti" target="_blank"
+            ><i class="fa-brands fa-github"></i> Lucas Abratti</a
+          >
+          <h4>labratti@frsn.utn.ar</h4>
+        </div>
+        <div class="contenido-footer">
+          <a href="https://github.com/Tadeoo14" target="_blank"
+            ><i class="fa-brands fa-github"></i> Tadeo Cardelli</a
+          >
+          <h4>tcardelli@frsn.utn.ar</h4>
+        </div>
+        <div class="contenido-footer">
+          <a href="https://github.com/JuliaGaeto" target="_blank"
+            ><i class="fa-brands fa-github"></i> Julia Gaeto</a
+          >
+          <h4>jgaeto@frsn.utn.edu.ar</h4>
+        </div>
+        <div class="contenido-footer">
+          <a href="https://github.com/Nachofrsn" target="_blank"
+            ><i class="fa-brands fa-github"></i> Ignacio Cordero</a
+          >
+          <h4>ncordero@frsn.utn.edu.ar</h4>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
