@@ -13,6 +13,37 @@ body {
 }
 
 /*HEADER*/
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff6e;
+  z-index: 100;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  display: none;
+}
+
+.menu li {
+  width: 100%;
+}
+
+.menu li:hover {
+  background-color: #a0a0a0;
+}
+
+.menu a {
+  color: #000;
+  width: 100%;
+  display: block;
+  padding: 20px 10px;
+}
+
 .header-nav {
   width: 100%;
   height: auto;
@@ -21,15 +52,21 @@ body {
     rgb(3, 22, 33) 64.2%,
     rgb(6, 39, 58) 100%
   );
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-bar {
-  padding: 20px 0 20px 0;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .ul-nav {
-  width: 70vh;
-  min-width: 600px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   margin: auto;
@@ -65,6 +102,12 @@ body {
 }
 
 /*TEXTOS Y VIDEO INICIO*/
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 .header-cards {
   text-align: center;
   font-size: 25px;
@@ -74,8 +117,7 @@ body {
 
 .seccion-video {
   width: 100%;
-  height: 710px;
-
+  height: 95vh;
   background-color: rgb(6, 39, 58);
   color: #fff;
   position: relative;
@@ -103,10 +145,9 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-
   color: #ffffff;
   gap: 20px;
-  padding: 0 0 0 120px;
+  padding: 20px;
   font-size: 1.2em;
 }
 
@@ -217,7 +258,7 @@ footer {
 
 .contenedor-footer {
   display: flex;
-  width: 90%;
+  width: 100%;
   justify-content: space-evenly;
   margin: auto;
   padding-bottom: 50px;
@@ -238,4 +279,49 @@ footer {
 .contenido-footer h4 {
   color: #ccc;
   padding: 10px 0 0 0;
+}
+
+@media (max-width: 650px) {
+  .openMenu {
+    display: block;
+  }
+
+  .showOnMobile {
+    display: none;
+  }
+
+  .ul-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+  }
+
+  .contenedor-footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contenido-footer {
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 651px) {
+  .openMenu {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .content-wrapper {
+    text-align: center;
+  }
+
+  .content-wrapper h1 {
+    font-size: 1.7em;
+  }
 }

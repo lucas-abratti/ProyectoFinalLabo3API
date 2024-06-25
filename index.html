@@ -11,7 +11,7 @@
     <meta name="keywords" content="Cockteleria,Tragos,Bebibas,Cocktails,Bar" />
     <meta
       name="author"
-      content="tcardelli@frsn.utn.ar,labratti@frsn.utn.ar,jgaeto@frsn.utn.edu.ar,icordero@frsn.utn.edu.ar"
+      content="tcardelli@frsn.utn.edu.ar,labratti@frsn.utn.edu.ar,jgaeto@frsn.utn.edu.ar,icordero@frsn.utn.edu.ar"
     />
     <script
       src="https://kit.fontawesome.com/5c0110373c.js"
@@ -24,12 +24,23 @@
     <header class="header-nav">
       <nav class="nav-bar">
         <ul class="ul-nav">
-          <li><a class="a-nav" href="/">HOME</a></li>
-          <li><a class="a-nav" href="/about">ABOUT</a></li>
-          <li><a class="a-nav" href="/games">GAMES</a></li>
-          <li><a class="a-nav" href="/history">HISTORY</a></li>
-          <li><a class="a-nav" href="/contact">CONTACT</a></li>
+          <li class="showOnMobile"><a class="a-nav" href="/">HOME</a></li>
+          <li class="showOnMobile"><a class="a-nav" href="/about">ABOUT</a></li>
+          <li class="showOnMobile"><a class="a-nav" href="/games">GAMES</a></li>
+          <li class="showOnMobile"><a class="a-nav" href="/history">HISTORY</a></li>
+          <li class="showOnMobile"><a class="a-nav" href="/contact">CONTACT</a></li>
+          <li class="openMenu"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
         </ul>
+
+        <ul class="menu">
+          <li class="closeMenu"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+          <li><a href="#">HOME</a></li>
+          <li><a href="/about">ABOUT</a></li>
+          <li><a href="/games">GAMES</a></li>
+          <li><a href="/history">HISTORY</a></li>
+          <li><a href="/contact">CONTACT</a></li>
+        </ul>
+        
       </nav>
     </header>
 
@@ -94,32 +105,30 @@
     </main>
 
     <!--footer-->
-    <footer>
-      <div class="contenedor-footer">
-        <div class="contenido-footer">
-          <a href="https://github.com/lucas-abratti" target="_blank"
-            ><i class="fa-brands fa-github"></i> Lucas Abratti</a
-          >
-          <h4>labratti@frsn.utn.ar</h4>
-        </div>
-        <div class="contenido-footer">
-          <a href="https://github.com/Tadeoo14" target="_blank"
-            ><i class="fa-brands fa-github"></i> Tadeo Cardelli</a
-          >
-          <h4>tcardelli@frsn.utn.ar</h4>
-        </div>
-        <div class="contenido-footer">
-          <a href="https://github.com/JuliaGaeto" target="_blank"
-            ><i class="fa-brands fa-github"></i> Julia Gaeto</a
-          >
-          <h4>jgaeto@frsn.utn.edu.ar</h4>
-        </div>
-        <div class="contenido-footer">
-          <a href="https://github.com/Nachofrsn" target="_blank"
-            ><i class="fa-brands fa-github"></i> Ignacio Cordero</a
-          >
-          <h4>icordero@frsn.utn.edu.ar</h4>
-        </div>
+    <footer class="contenedor-footer">
+      <div class="contenido-footer">
+        <a href="https://github.com/lucas-abratti" target="_blank"
+          ><i class="fa-brands fa-github"></i> Lucas Abratti</a
+        >
+        <h4>labratti@frsn.utn.ar</h4>
+      </div>
+      <div class="contenido-footer">
+        <a href="https://github.com/Tadeoo14" target="_blank"
+          ><i class="fa-brands fa-github"></i> Tadeo Cardelli</a
+        >
+        <h4>tcardelli@frsn.utn.ar</h4>
+      </div>
+      <div class="contenido-footer">
+        <a href="https://github.com/JuliaGaeto" target="_blank"
+          ><i class="fa-brands fa-github"></i> Julia Gaeto</a
+        >
+        <h4>jgaeto@frsn.utn.edu.ar</h4>
+      </div>
+      <div class="contenido-footer">
+        <a href="https://github.com/Nachofrsn" target="_blank"
+          ><i class="fa-brands fa-github"></i> Ignacio Cordero</a
+        >
+        <h4>icordero@frsn.utn.edu.ar</h4>
       </div>
     </footer>
     <script type="module" src="/main.js"></script>
