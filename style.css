@@ -147,14 +147,16 @@ body {
 
 .box {
   border-radius: 20px;
-  width: 200px;
+  width: 300px;
   height: 300px;
   position: relative;
   overflow: hidden;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-  background-image: url(negroni.jpg);
-  background-size: cover;
-  background-position: 50%;
+}
+
+.card-img{
+  height: 100%;
+  transition: height 0.5s;
 }
 
 .overlay {
@@ -168,14 +170,14 @@ body {
   align-items: start;
   justify-content: start;
   flex-direction: column;
-  padding: 0% 0% 0% 3%;
-  transition: height 0.5s;
+  padding: 0% 20% 0% 3%;
+  transition: all 0.5s;
 }
 
 .overlay h3 {
   font-weight: 500;
   margin-top: 80%;
-  font-size: 3rem;
+  font-size: 2rem;
   color: var(--second-text-color);
 }
 
@@ -189,8 +191,8 @@ body {
   padding: 5px 15px;
 }
 
-.box:hover img {
-  transform: scale(1.2);
+.box:hover .card-img{
+  height: 110%;
 }
 
 .box:hover .overlay {
