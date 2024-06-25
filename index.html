@@ -6,7 +6,7 @@
     <meta name="description" content="Todos sobre los tragos mas populares y prestigiados"/>
     <meta name="keywords" content="Cockteleria,Tragos,Bebibas,Cocktails,Bar" />
     <meta name="author" content="tcardelli@frsn.utn.ar,labratti@frsn.utn.ar,jgaeto@frsn.utn.edu.ar, icordero@frsn.utn.edu.ar"/>
-    <link rel="icon" type="image/svg+xml" href="public/cocktail-favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="public/src/cocktail-favicon.png" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://kit.fontawesome.com/5c0110373c.js" crossorigin="anonymous"></script>
@@ -16,12 +16,23 @@
     <header class="header-nav">
       <nav class="nav-bar">
         <ul class="ul-nav">
-          <li><a class="a-nav" href="/">HOME</a></li>
-          <li><a class="a-nav" href="/about">ABOUT</a></li>
-          <li><a class="a-nav" href="/games">GAMES</a></li>
-          <li><a class="a-nav" href="/history">HISTORY</a></li>
-          <li><a class="a-nav" href="/contact">CONTACT</a></li>
+          <li class="showOnMobile"><a class="a-nav" href="/">HOME</a></li>
+          <li class="showOnMobile"><a class="a-nav" href="/about">ABOUT</a></li>
+          <li class="showOnMobile"><a class="a-nav" href="/games">GAMES</a></li>
+          <li class="showOnMobile"><a class="a-nav" href="/history">HISTORY</a></li>
+          <li class="showOnMobile"><a class="a-nav" href="/contact">CONTACT</a></li>
+          <li class="openMenu"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
         </ul>
+
+        <ul class="menu">
+          <li class="closeMenu"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+          <li><a href="#">HOME</a></li>
+          <li><a href="/about">ABOUT</a></li>
+          <li><a href="/games">GAMES</a></li>
+          <li><a href="/history">HISTORY</a></li>
+          <li><a href="/contact">CONTACT</a></li>
+        </ul>
+        
       </nav>
     </header>
 
@@ -32,7 +43,7 @@
           <p>
             Expert guide, featuring hand-selected cocktail recipes, games, and
             more. With information from
-            <img class="p-img" src="logoTheCocktailDB.png" alt="Logo the cocktailDB" />
+            <img class="p-img" src="public/src/logoTheCocktailDB.png" alt="Logo the cocktailDB" />
           </p>
           <div class="content-btn">
             <a href="#card-area" class="btn-find">FIND NEW DRINKS</a>
@@ -45,7 +56,7 @@
             autoplay
             muted
             loop
-            src="videoInicio.mp4"
+            src="public/src/videoInicio.mp4"
           ></video>
         </div>
       </section>
@@ -59,7 +70,7 @@
 
           <div class="box-area">
             <div class="box">
-              <img class="card-img" src="negroni.jpg" alt="Negroni" />
+              <img class="card-img" src="public/negroni.jpg" alt="Negroni" />
               <div class="overlay">
                 <h3>Negroni</h3>
                 <p class="drink-ingredients"></p>
@@ -67,7 +78,7 @@
             </div>
 
             <div class="box">
-              <img class="card-img" src="negroni.jpg" alt="Negroni" />
+              <img class="card-img" src="public/negroni.jpg" alt="Negroni" />
               <div class="overlay">
                 <h3>Negroni</h3>
                 <p class="drink-ingredients"></p>
@@ -75,22 +86,14 @@
             </div>
 
             <div class="box">
-              <img class="card-img" src="negroni.jpg" alt="Negroni" />
+              <img class="card-img" src="public/negroni.jpg" alt="Negroni" />
               <div class="overlay">
                 <h3>Negroni</h3>
                 <p class="drink-ingredients"></p>
               </div>
             </div>
             <div class="box">
-              <img class="card-img" src="negroni.jpg" alt="Negroni" />
-              <div class="overlay">
-                <h3>Negroni</h3>
-                <p class="drink-ingredients"></p>
-              </div>
-            </div>
-
-            <div class="box">
-              <img class="card-img" src="negroni.jpg" alt="Negroni" />
+              <img class="card-img" src="public/negroni.jpg" alt="Negroni" />
               <div class="overlay">
                 <h3>Negroni</h3>
                 <p class="drink-ingredients"></p>
@@ -98,7 +101,15 @@
             </div>
 
             <div class="box">
-              <img class="card-img" src="negroni.jpg" alt="Negroni" />
+              <img class="card-img" src="public/negroni.jpg" alt="Negroni" />
+              <div class="overlay">
+                <h3>Negroni</h3>
+                <p class="drink-ingredients"></p>
+              </div>
+            </div>
+
+            <div class="box">
+              <img class="card-img" src="public/negroni.jpg" alt="Negroni" />
               <div class="overlay">
                 <h3>Negroni</h3>
                 <p class="drink-ingredients"></p>
@@ -111,32 +122,30 @@
     </main>
 
     <!--footer-->
-    <footer>
-      <div class="contenedor-footer">
-        <div class="contenido-footer">
-          <a href="https://github.com/lucas-abratti" target="_blank"
-            ><i class="fa-brands fa-github"></i> Lucas Abratti</a
-          >
-          <h4>labratti@frsn.utn.ar</h4>
-        </div>
-        <div class="contenido-footer">
-          <a href="https://github.com/Tadeoo14" target="_blank"
-            ><i class="fa-brands fa-github"></i> Tadeo Cardelli</a
-          >
-          <h4>tcardelli@frsn.utn.ar</h4>
-        </div>
-        <div class="contenido-footer">
-          <a href="https://github.com/JuliaGaeto" target="_blank"
-            ><i class="fa-brands fa-github"></i> Julia Gaeto</a
-          >
-          <h4>jgaeto@frsn.utn.edu.ar</h4>
-        </div>
-        <div class="contenido-footer">
-          <a href="https://github.com/Nachofrsn" target="_blank"
-            ><i class="fa-brands fa-github"></i> Ignacio Cordero</a
-          >
-          <h4>icordero@frsn.utn.edu.ar</h4>
-        </div>
+    <footer class="contenedor-footer">
+      <div class="contenido-footer">
+        <a href="https://github.com/lucas-abratti" target="_blank"
+          ><i class="fa-brands fa-github"></i> Lucas Abratti</a
+        >
+        <h4>labratti@frsn.utn.ar</h4>
+      </div>
+      <div class="contenido-footer">
+        <a href="https://github.com/Tadeoo14" target="_blank"
+          ><i class="fa-brands fa-github"></i> Tadeo Cardelli</a
+        >
+        <h4>tcardelli@frsn.utn.ar</h4>
+      </div>
+      <div class="contenido-footer">
+        <a href="https://github.com/JuliaGaeto" target="_blank"
+          ><i class="fa-brands fa-github"></i> Julia Gaeto</a
+        >
+        <h4>jgaeto@frsn.utn.edu.ar</h4>
+      </div>
+      <div class="contenido-footer">
+        <a href="https://github.com/Nachofrsn" target="_blank"
+          ><i class="fa-brands fa-github"></i> Ignacio Cordero</a
+        >
+        <h4>icordero@frsn.utn.edu.ar</h4>
       </div>
     </footer>
     <script type="module" src="/main.js"></script>
