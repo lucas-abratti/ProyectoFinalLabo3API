@@ -276,8 +276,11 @@ main {
   color:#fff
 }
 
-.box-area:hover .box:not(:hover){
-  filter: blur(5px);
+.blurred {
+  transition: filter 0.3s ease-out; /* Smooth transition for the filter */
+}
+.blurred:not(:hover) {
+  filter: blur(5px); /* Apply 5px blur on hover */
 }
 .box:hover .card-img{
   height: 110%; 
