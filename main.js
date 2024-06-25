@@ -1,10 +1,10 @@
 const btnMagico = document.getElementById("btnMagico");
 
-btnMagico.addEventListener("click", () =>{
+window.addEventListener("load", () =>{
   var url = "http://colormind.io/api/";
   var data = {
     model : "default",
-    input : [[ 199, 42, 12 ],"N","N","N",[ 217, 218, 165 ]]
+    input : [[ 19, 19, 20 ],"N","N","N","N"]
   }
   
   var http = new XMLHttpRequest();
@@ -24,4 +24,4 @@ btnMagico.addEventListener("click", () =>{
   
   http.open("POST", url, true);
   http.send(JSON.stringify(data));
-})
+});

@@ -8,29 +8,27 @@
 }
 
 html {
-  --first-color: "white";
-  --second-color: "white";
-  --third-color: "white";
-  --fourth-color: "white";
-  --fifth-color: "white";
+  --first-color: rgb(203, 42, 15);
+  --second-color: rgb(195, 48, 43);
+  --third-color: rgb(109, 139, 164);
+  --fourth-color: rgb(157, 206, 203 );
+  --fifth-color: rgb(220, 218, 166);
+
+  --first-text-color: rgb(255, 255, 255);
+  --second-text-color: rgb(182, 182, 182);
 }
 
 
 body {
-  background-color: rgb(6, 39, 58);
+  background-color: var(--first-color);
   font-family: Arial, sans-serif;
-  background-color: var(--main-background-color);
 }
 
 /*HEADER*/
 .header-nav {
   width: 100%;
   height: auto;
-  background: linear-gradient(
-    rgb(0, 0, 0) 0px,
-    rgb(3, 22, 33) 64.2%,
-    rgb(6, 39, 58) 100%
-  );
+  background: var(--first-color);
 }
 
 .nav-bar {
@@ -46,7 +44,7 @@ body {
 }
 
 .a-nav {
-  color: #a0a0a0;
+  color: var(--first-text-color);
   position: relative;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
@@ -58,7 +56,7 @@ body {
 .a-nav:after {
   content: "";
   position: absolute;
-  background-color: #ce7c2e;
+  background-color: var(--second-color); 
   height: 3px;
   width: 0;
   left: 0;
@@ -67,7 +65,7 @@ body {
 }
 
 .a-nav:hover {
-  color: #ffffff;
+  color: var(--first-text-color);
 }
 
 .a-nav:hover:after {
@@ -78,16 +76,13 @@ body {
 .header-cards {
   text-align: center;
   font-size: 25px;
-  color: #16212a;
-  text-shadow: 1px 1px 5px #16212a;
+  color: var(--first-text-color);
+  text-shadow: 1px 1px 5px var(--second-text-color);
 }
 
 .seccion-video {
   width: 100%;
   height: 710px;
-
-  background-color: rgb(6, 39, 58);
-  color: #fff;
   position: relative;
   overflow: hidden;
 }
@@ -113,8 +108,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-
-  color: #ffffff;
+  color: var(--first-text-color);
   gap: 20px;
   padding: 0 0 0 120px;
   font-size: 1.2em;
@@ -142,7 +136,6 @@ body {
 
 #card-area {
   padding: 50px 0;
-  background-color: #fff;
 }
 
 .box-area {
@@ -152,23 +145,64 @@ body {
   margin-top: 50px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.box {
+  border-radius: 20px;
+  width: 200px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  background-image: url(negroni.jpg);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.overlay {
+  height: 0;
+  width: 100%;
+  background: linear-gradient(transparent, var(--second-color) 95%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  padding: 0% 0% 0% 3%;
+  transition: height 0.5s;
+}
+
+.overlay h3 {
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  margin-top: 80%;
+  font-size: 3rem;
+  color: var(--second-text-color);
 }
-button:hover {
-  border-color: #646cff;
+
+.overlay a {
+  color: var(--first-text-color);
+  background: var(--first-color);
+  margin-top: 10px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  text-align: center;
+  padding: 5px 15px;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.box:hover img {
+  transform: scale(1.2);
+}
+
+.box:hover .overlay {
+  height: 100%;
+}
+
+/*FOOTER*/
+footer {
+  background: var(--second-color);
+  padding: 60px 0 30px 0;
+  margin: auto;
+  overflow: hidden;
 }
 
 .contenedor-footer {
@@ -177,7 +211,7 @@ button:focus-visible {
   justify-content: space-evenly;
   margin: auto;
   padding-bottom: 50px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--first-text-color);
 }
 
 .contenido-footer {
@@ -185,13 +219,13 @@ button:focus-visible {
 }
 
 .contenido-footer a {
-  color: #fff;
-  border-bottom: 3px solid #ce7c2e;
+  color: var(--first-text-color);
+  border-bottom: 3px solid var(--third-color);
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
 
 .contenido-footer h4 {
-  color: #ccc;
+  color: var(--first-text-color);
   padding: 10px 0 0 0;
 }
