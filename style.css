@@ -71,7 +71,30 @@ body {
 .a-nav:hover:after {
   width: 100%;
 }
+.content-btn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
 
+}
+.btn-find{
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  color: var(--first-text-color);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.75em;
+  cursor: pointer;
+
+}
+.btn-find:hover{
+  background: var(--third-color);
+  color: var(--first-color);
+  transition: all 0.5s;
+}
 /*TEXTOS Y VIDEO INICIO*/
 .header-cards {
   text-align: center;
@@ -112,7 +135,7 @@ body {
   flex-direction: column;
   color: var(--first-text-color);
   gap: 20px;
-  padding: 0 0 0 120px;
+  padding: 20px;
   font-size: 1.2em;
 }
 
