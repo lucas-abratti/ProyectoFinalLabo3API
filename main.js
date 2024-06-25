@@ -13,6 +13,8 @@ closeMenu.addEventListener("click", function() {
 })
 
 window.addEventListener("load", () =>{
+  console.log("Fetching colors");
+
   let url = "http://colormind.io/api/";
   let data = {
     model : "default",
@@ -27,10 +29,12 @@ window.addEventListener("load", () =>{
       document.documentElement.style.setProperty("--third-color", `rgb(${palette[2][0]},${palette[2][1]},${palette[2][2]})`);
       document.documentElement.style.setProperty("--fourth-color", `rgb(${palette[3][0]},${palette[3][1]},${palette[3][2]})`);
       document.documentElement.style.setProperty("--fifth-color", `rgb(${palette[4][0]},${palette[4][1]},${palette[4][2]})`);
+      console.log("Colors fetched");
     }
   }
   http.open("POST", url, true);
   http.send(JSON.stringify(data));
+
 });
 
 function getDrink(box){
@@ -72,22 +76,24 @@ for(var i = 0; i < 6; i++){
   boxArea.appendChild(card);
 }
 
-for (let i = 0; i < cards.length; i++) {
-  getDrink(cards[i]);
-  cards[i].addEventListener("mouseover", () => {blurOtherCards(i)})
-  cards[i].addEventListener("mouseleave", () => {removeBlurOtherCards(i)})
-}
-
-function blurOtherCards(hoveredCard){
+window.addEventListener("load", () =>{
   for (let i = 0; i < cards.length; i++) {
-    if(i == hoveredCard) { continue; }
-    cards[i].classList.add("blurred");
+    getDrink(cards[i]);
+    cards[i].addEventListener("mouseover", () => {blurOtherCards(i)})
+    cards[i].addEventListener("mouseleave", () => {removeBlurOtherCards(i)})
   }
-}
-
-function removeBlurOtherCards(hoveredCard){
-  for (let i = 0; i < cards.length; i++) {
-    if(i == hoveredCard) { continue; }
-    cards[i].classList.remove("blurred");
+  
+  function blurOtherCards(hoveredCard){
+    for (let i = 0; i < cards.length; i++) {
+      if(i == hoveredCard) { continue; }
+      cards[i].classList.add("blurred");
+    }
   }
-}
+  
+  function removeBlurOtherCards(hoveredCard){
+    for (let i = 0; i < cards.length; i++) {
+      if(i == hoveredCard) { continue; }
+      cards[i].classList.remove("blurred");
+    }
+  }
+})
