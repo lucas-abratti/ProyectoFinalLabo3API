@@ -181,7 +181,7 @@ body {
 
 .overlay h3 {
   font-weight: 500;
-  margin-top: 80%;
+  margin-top: 20%;
   font-size: 2rem;
   color: #fff;
   text-shadow: 1px 1px 5px #fff;
@@ -195,6 +195,9 @@ body {
   border-radius: 8px;
   text-align: center;
   padding: 5px 15px;
+}
+.drink-ingredients{
+  color:#fff
 }
 
 .box-area:hover .box:not(:hover){
