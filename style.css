@@ -7,12 +7,26 @@
   scroll-behavior: smooth;
 }
 
+html {
+  --first-color: rgb(203, 42, 15);
+  --second-color: rgb(195, 48, 43);
+  --third-color: rgb(109, 139, 164);
+  --fourth-color: rgb(157, 206, 203 );
+  --fifth-color: rgb(220, 218, 166);
+
+  --first-text-color: rgb(255, 255, 255);
+  --second-text-color: rgb(182, 182, 182);
+}
+
+
 body {
-  background-color: rgb(6, 39, 58);
+  background-color: var(--first-color);
   font-family: Arial, sans-serif;
 }
 
 /*HEADER*/
+
+/*MOBILE NAVBAR*/
 
 .menu {
   position: fixed;
@@ -33,6 +47,10 @@ body {
   width: 100%;
 }
 
+.menu li:not(.closeMenu) {
+  text-align: center;
+}
+
 .menu li:hover {
   background-color: #a0a0a0;
 }
@@ -44,17 +62,15 @@ body {
   padding: 20px 10px;
 }
 
+/*DESKTOP NAVBAR*/
+
 .header-nav {
   width: 100%;
   height: auto;
-  background: linear-gradient(
-    rgb(0, 0, 0) 0px,
-    rgb(3, 22, 33) 64.2%,
-    rgb(6, 39, 58) 100%
-  );
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--first-color);
 }
 
 .nav-bar {
@@ -73,7 +89,7 @@ body {
 }
 
 .a-nav {
-  color: #a0a0a0;
+  color: var(--first-text-color);
   position: relative;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
@@ -85,7 +101,7 @@ body {
 .a-nav:after {
   content: "";
   position: absolute;
-  background-color: #ce7c2e;
+  background-color: var(--second-color); 
   height: 3px;
   width: 0;
   left: 0;
@@ -94,7 +110,7 @@ body {
 }
 
 .a-nav:hover {
-  color: #ffffff;
+  color: var(--first-text-color);
 }
 
 .a-nav:hover:after {
@@ -111,8 +127,8 @@ main {
 .header-cards {
   text-align: center;
   font-size: 25px;
-  color: #16212a;
-  text-shadow: 1px 1px 5px #16212a;
+  color: var(--first-text-color);
+  text-shadow: 1px 1px 5px var(--second-text-color);
 }
 
 .seccion-video {
@@ -130,12 +146,14 @@ main {
   font-family: "Bebas Neue", sans-serif;
   font-size: 3em;
   letter-spacing: 1px;
+  text-shadow: 1px 1px 20px #fff;
   animation: animate 1.5s ease;
 }
 
 .p-img {
   height: 25px;
   width: auto;
+  text-shadow: 1px 1px 5px #fff;
 }
 
 .content-wrapper {
@@ -145,7 +163,7 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  color: #ffffff;
+  color: var(--first-text-color);
   gap: 20px;
   padding: 20px;
   font-size: 1.2em;
@@ -172,88 +190,84 @@ main {
 }
 
 #card-area {
-  padding: 50px 0;
-  background-color: #fff;
+  margin: 20px 0 20px 0;
+  padding: 2px;
 }
-
+.header-cards h2{
+  margin-bottom: 20px;
+}
 .box-area {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 40px;
-  margin-top: 50px;
+
 }
 
 .box {
-  border-radius: 10px;
+  border-radius: 20px;
+  width: 300px;
+  height: 300px;
   position: relative;
   overflow: hidden;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.box img {
-  width: 100%;
-  border-radius: 10px;
-  display: block;
-  transition: transform 0.5s;
+.card-img{
+  height: 100%;
+  transition: height 0.5s;
 }
 
 .overlay {
   height: 0;
   width: 100%;
-  background: linear-gradient(transparent, rgb(6, 39, 58) 80%);
-  border-radius: 10px;
+  background: linear-gradient(transparent, var(--second-color) 95%);
   position: absolute;
   left: 0;
   bottom: 0;
-  overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   flex-direction: column;
-  padding: 0 40px;
-  text-align: center;
-  font-size: 14px;
-  transition: height 0.5s;
+  padding: 0% 20% 0% 3%;
+  transition: all 0.5s;
 }
 
 .overlay h3 {
   font-weight: 500;
-  margin-bottom: 5px;
   margin-top: 80%;
-  font-size: 30px;
-  letter-spacing: 2px;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 1px 1px 5px #fff;
 }
 
 .overlay a {
+  color: var(--first-text-color);
+  background: var(--first-color);
   margin-top: 10px;
-  color: #262626;
-  text-decoration: none;
-  font-size: 14px;
-  background: #fff;
-  border-radius: 50px;
+  font-size: 0.85rem;
+  border-radius: 8px;
   text-align: center;
   padding: 5px 15px;
 }
 
-.box:hover img {
-  transform: scale(1.2);
+.box-area:hover .box:not(:hover){
+  filter: blur(5px);
+}
+.box:hover .card-img{
+  height: 110%; 
 }
 
 .box:hover .overlay {
   height: 100%;
+
 }
 
 /*FOOTER*/
 footer {
-  background: rgb(6, 39, 58);
+  background: var(--second-color);
   padding: 60px 0 30px 0;
   margin: auto;
   overflow: hidden;
-  background: linear-gradient(
-    rgb(6, 39, 58) 0px,
-    rgb(3, 22, 33) 37.8%,
-    rgb(0, 0, 0) 100%
-  );
 }
 
 .contenedor-footer {
@@ -262,7 +276,7 @@ footer {
   justify-content: space-evenly;
   margin: auto;
   padding-bottom: 50px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--first-text-color);
 }
 
 .contenido-footer {
@@ -270,14 +284,14 @@ footer {
 }
 
 .contenido-footer a {
-  color: #fff;
-  border-bottom: 3px solid #ce7c2e;
+  color: var(--first-text-color);
+  border-bottom: 3px solid var(--third-color);
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
 
 .contenido-footer h4 {
-  color: #ccc;
+  color: var(--first-text-color);
   padding: 10px 0 0 0;
 }
 
@@ -323,5 +337,11 @@ footer {
 
   .content-wrapper h1 {
     font-size: 1.7em;
+  }
+}
+
+@media (max-width: 314px) {
+  .box {
+    width: 250px;
   }
 }
