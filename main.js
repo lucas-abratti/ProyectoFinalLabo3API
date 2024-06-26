@@ -59,8 +59,20 @@ function getDrink(box) {
     .then((data) => {
       var drinkName = box.querySelector("h3");
       var drinkImg = box.querySelector(".card-img");
+      const drinkIngredients = box.querySelector(".drink-ingredients");
       drinkName.innerText = data.drinks[0].strDrink;
       drinkImg.src = data.drinks[0].strDrinkThumb;
+      console.log(data);
+      for (let i = 1; i <= 15; i++) {
+        if (data.drinks[0][`strIngredient${i}`] != null) {
+          var ingredient = document.createElement("p");
+          ingredient.innerText =
+            data.drinks[0][`strIngredient${i}`] +
+            " - " +
+            data.drinks[0][`strMeasure${i}`];
+          drinkIngredients.appendChild(ingredient);
+        }
+      }
     });
 }
 

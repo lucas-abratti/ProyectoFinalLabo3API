@@ -115,7 +115,30 @@ body {
 .a-nav:hover:after {
   width: 100%;
 }
+.content-btn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
 
+}
+.btn-find{
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  color: var(--first-text-color);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.75em;
+  cursor: pointer;
+
+}
+.btn-find:hover{
+  background: var(--third-color);
+  color: var(--first-color);
+  transition: all 0.5s;
+}
 /*TEXTOS Y VIDEO INICIO*/
 
 main {
@@ -232,7 +255,7 @@ main {
 
 .overlay h3 {
   font-weight: 500;
-  margin-top: 80%;
+  margin-top: 20%;
   font-size: 2rem;
   color: #fff;
   text-shadow: 1px 1px 5px #fff;
@@ -246,6 +269,9 @@ main {
   border-radius: 8px;
   text-align: center;
   padding: 5px 15px;
+}
+.drink-ingredients{
+  color:#fff
 }
 
 .box-area:hover .box:not(:hover) {
