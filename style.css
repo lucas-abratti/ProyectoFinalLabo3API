@@ -1,4 +1,5 @@
-/*RESET CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -169,10 +170,10 @@ main {
 .seccion-video h1 {
   padding-top: 200px;
   font-size: 2em;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Bungee Spice';
   font-size: 3em;
   letter-spacing: 1px;
-  text-shadow: 1px 1px 20px #fff;
+  text-shadow: 1px 1px 5px #000000;
   animation: animate 1.5s ease;
 }
 
@@ -193,6 +194,14 @@ main {
   gap: 20px;
   padding: 20px;
   font-size: 1.2em;
+}
+
+.content-wrapper h1 {
+  padding-left: 50px;
+}
+
+.content-wrapper p {
+  padding-left: 50px;
 }
 
 .video-wrapper {
@@ -346,6 +355,7 @@ footer {
 @media (max-width: 650px) {
   .openMenu {
     display: block;
+    transition: all 2s ease-in-out;
   }
 
   .showOnMobile {
@@ -385,6 +395,20 @@ footer {
 
   .content-wrapper h1 {
     font-size: 1.7em;
+  }
+}
+
+@media (max-width: 384px) {
+  .box {
+    height: 400px;
+  }
+
+  .overlay h3 {
+    font-size: 1.5em;
+  }
+
+  .drink-ingredients {
+    font-size: 0.95em;
   }
 }
 
