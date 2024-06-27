@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -166,10 +168,10 @@ main {
 .seccion-video h1 {
   padding-top: 200px;
   font-size: 2em;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'Bungee Spice';
   font-size: 3em;
   letter-spacing: 1px;
-  text-shadow: 1px 1px 20px #fff;
+  text-shadow: 1px 1px 5px #000000;
   animation: animate 1.5s ease;
 }
 
