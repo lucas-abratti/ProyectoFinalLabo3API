@@ -52,7 +52,7 @@ async function generarTablero() {
             ${iconos[index]}
           </div>
           <div class="cara superior">
-            <img src="public/memotestImg/question-solid.svg" alt="">
+            <img src="/public/memotestImg/question-solid.svg" alt="">
           </div>
         </div>
       </div>
