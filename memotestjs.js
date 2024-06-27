@@ -36,6 +36,7 @@ async function cargarIconos(){
 
 async function generarTablero() {
   movimientos = 0;
+  iconos = [];
   mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
   await cargarIconos();
   selecciones = [];
