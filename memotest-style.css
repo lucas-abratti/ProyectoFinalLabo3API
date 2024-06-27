@@ -108,8 +108,8 @@ body {
 
 /**/
 :root {
-  --w: calc(70vw / 6);
-  --h: calc(70vh / 4);
+  --w: calc(55vw / 6);
+  --h: calc(55vh / 4);
 }
 
 * {
@@ -130,7 +130,28 @@ body {
 }
 
 #tablero {
-  padding: 20px 350px;
+  margin: 20px 400px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 30px 0;
+}
+
+.juego {
+  height: 800px;
+  width: auto;
+}
+
+.titulo-juego {
+  font-size: 30px;
+  margin: 10px 0 20px 0;
+}
+
+.estadisticas {
+  border: 1px #fff solid;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 15px;
 }
 
 div {
@@ -144,12 +165,13 @@ div {
   min-width: 100px;
   height: var(--h);
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .tarjeta {
   position: relative;
   transform-style: preserve-3d;
-  animation: iniciar 3s;
+  animation: iniciar 2s;
 }
 
 .cara {
@@ -171,17 +193,26 @@ div {
 }
 
 img {
-  width: 170px;
+  width: 139px;
   min-width: 100px;
-  height: 135px;
+  height: 110px;
+  border-radius: 10px;
 }
 
 .nuevo-juego {
   background: linear-gradient(orange, darkorange);
-  padding: 20px;
+  padding: 15px;
   border-radius: 50px;
   border: white 5px solid;
   cursor: pointer;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.nuevo-juego:hover {
+  border: orange 5px solid;
+  color: darkorange;
+  background: white;
 }
 
 @keyframes iniciar {
@@ -193,14 +224,6 @@ img {
   100% {
     transform: rotateY(0deg);
   }
-}
-
-.juego {
-  padding: 10px 0;
-}
-
-.titulo-juego {
-  font-size: 20px;
 }
 
 /*FOOTER*/
@@ -233,4 +256,55 @@ footer {
 .contenido-footer h4 {
   color: #fff;
   padding: 10px 0 0 0;
+}
+
+@media (max-width: 650px) {
+  .openMenu {
+    display: block;
+  }
+
+  .showOnMobile {
+    display: none;
+  }
+
+  .ul-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+  }
+
+  .contenedor-footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contenido-footer {
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 651px) {
+  .openMenu {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .content-wrapper {
+    text-align: center;
+  }
+
+  .content-wrapper h1 {
+    font-size: 1.7em;
+  }
+}
+
+@media (max-width: 314px) {
+  .box {
+    width: 250px;
+  }
 }

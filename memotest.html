@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="memotest-style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.0/dist/sweetalert2.all.min.js"></script>
     <title>Memotest</title>
   </head>
   <body>
@@ -61,8 +62,11 @@
 
     <main>
       <section class="juego">
-        <header class="titulo-juego">
-          <h1>COCKTAIL MEMOTEST</h1>
+        <header class="header-juego">
+          <h1 class="titulo-juego">COCKTAIL MEMOTEST</h1>
+          <div class="">
+            <p id="movimientos" class="estadisticas">Movimientos: 0</p>
+          </div>
         </header>
         <div id="tablero"></div>
         <br />

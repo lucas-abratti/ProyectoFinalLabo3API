@@ -30,6 +30,10 @@ for (let i = 0; i < cards.length; i++) {
 
 let iconos = [];
 let selecciones = [];
+let movimientos = 0;
+let cantidadTarjetas = 16;
+
+let mostrarMovimientos = document.getElementById("movimientos");
 
 generarTablero();
 
@@ -47,11 +51,13 @@ function cargarIconos() {
 }
 
 function generarTablero() {
+  movimientos = 0;
+  mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
   cargarIconos();
   selecciones = [];
   let tablero = document.getElementById("tablero");
   let tarjetas = [];
-  for (let i = 0; i < 16; i++) {
+  for (let i = 0; i < cantidadTarjetas; i++) {
     tarjetas.push(`
       <div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
         <div class="tarjeta" id="tarjeta${i}">
@@ -80,6 +86,8 @@ function seleccionarTarjeta(i) {
     selecciones.push(i);
   }
   if (selecciones.length == 2) {
+    movimientos++;
+    mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
     deseleccionar(selecciones);
     selecciones = [];
   }
@@ -94,6 +102,27 @@ function deseleccionar(selecciones) {
       let tarjeta2 = document.getElementById("tarjeta" + selecciones[1]);
       tarjeta1.style.transform = "rotateY(0deg)";
       tarjeta2.style.transform = "rotateY(0deg)";
+    } else {
+      trasera1.style.background = "plum";
+      trasera2.style.background = "plum";
+    }
+
+    if (verificarFin()) {
+      swal.fire({
+        title: `Felicitaciones has ganado!`,
+        text: `Movimientos necesarios: ${movimientos}`,
+        icon: `success`,
+      });
     }
   }, 1000);
+}
+
+function verificarFin() {
+  for (let i = 0; i < cantidadTarjetas; i++) {
+    let trasera = document.getElementById("trasera" + i);
+    if (trasera.style.background != "plum") {
+      return false;
+    }
+  }
+  return true;
 }
