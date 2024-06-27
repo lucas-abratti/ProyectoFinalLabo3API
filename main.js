@@ -1,6 +1,8 @@
-const openMenu = document.querySelector(".openMenu");
-const closeMenu = document.querySelector(".closeMenu");
-const menu = document.querySelector(".menu");
+const openMenu = document.querySelector('.openMenu');
+const closeMenu = document.querySelector('.closeMenu');
+const menu = document.querySelector('.menu');
+
+const boxArea = document.querySelector('.box-area')
 
 openMenu.addEventListener("click", function () {
   menu.style.display = "flex";
@@ -49,11 +51,11 @@ window.addEventListener("load", () => {
 
   http.open("POST", url, true);
   http.send(JSON.stringify(data));
+
 });
 
 function getDrink(box) {
-  var url = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-
+  let url = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
