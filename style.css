@@ -192,6 +192,14 @@ main {
   font-size: 1.2em;
 }
 
+.content-wrapper h1 {
+  padding-left: 50px;
+}
+
+.content-wrapper p {
+  padding-left: 50px;
+}
+
 .video-wrapper {
   z-index: 10;
   height: 100vh;
