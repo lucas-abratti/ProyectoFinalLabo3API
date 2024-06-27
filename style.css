@@ -1,3 +1,4 @@
+/*RESET CSS*/
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +17,7 @@ html {
 
   --first-text-color: rgb(255, 255, 255);
   --second-text-color: rgb(182, 182, 182);
+  
 }
 
 
@@ -128,7 +130,7 @@ body {
   width: 200px;
   justify-content: center;
   color: var(--first-text-color);
-  border: none;
+  border: solid 1px var(--first-text-color);
   padding: 10px;
   border-radius: 5px;
   font-size: 0.75em;
@@ -139,6 +141,7 @@ body {
   background: var(--third-color);
   color: var(--first-color);
   transition: all 0.5s;
+  border: solid 1px var(--third-color);
 }
 /*TEXTOS Y VIDEO INICIO*/
 
@@ -166,7 +169,7 @@ main {
 .seccion-video h1 {
   padding-top: 200px;
   font-size: 2em;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 3em;
   letter-spacing: 1px;
   text-shadow: 1px 1px 20px #fff;
@@ -205,6 +208,11 @@ main {
   object-fit: cover;
   height: 100%;
   width: 100%;
+}
+
+.content-wrapper p{
+  margin-left: 14px;
+  text-shadow: 0 0 5px #fff;
 }
 
 /*CARDS*/
