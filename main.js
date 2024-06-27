@@ -2,7 +2,8 @@ const openMenu = document.querySelector('.openMenu');
 const closeMenu = document.querySelector('.closeMenu');
 const menu = document.querySelector('.menu');
 
-const boxArea = document.querySelector('.box-area')
+const boxArea = document.querySelector('.box-area');
+const drinksBtn = document.querySelector('#refresDrinksBtn');
 
 openMenu.addEventListener("click", function() {
   menu.style.display = 'flex'
@@ -10,6 +11,11 @@ openMenu.addEventListener("click", function() {
 
 closeMenu.addEventListener("click", function() {
   menu.style.display = 'none'
+})
+
+drinksBtn.addEventListener("click", () => {
+  resetCards();
+  addBlureffectToCards(addDrinks(10));
 })
 
 window.addEventListener("load", () =>{
@@ -61,26 +67,36 @@ function getDrink(box){
   })
 }
 
-let cards = [];
-for(var i = 0; i < 6; i++){
-  let card = document.createElement("div");
-  card.classList.add("box");
-  card.innerHTML = `
-  <img class="card-img" src="public/negroni.jpg" alt="Negroni" />
-  <div class="overlay">
-  <h3>Negroni</h3>
-  <p class="drink-ingredients"></p>
-  </div>`;
-  cards.push(card);
-  console.log("Card pushed")
-  boxArea.appendChild(card);
+function addDrinks(nDrinks){
+  let cards = [];
+  for(var i = 0; i < nDrinks; i++){
+    let card = document.createElement("div");
+    card.classList.add("box");
+    card.innerHTML = `
+    <img class="card-img" src="public/negroni.jpg" alt="Negroni" />
+    <div class="overlay">
+    <h3>Negroni</h3>
+    <p class="drink-ingredients"></p>
+    </div>`;
+    cards.push(card);
+    console.log("Card pushed")
+    boxArea.appendChild(card);
+    getDrink(cards[i]);
+  }
+  return cards;
 }
 
-window.addEventListener("load", () =>{
+function resetCards(){
+  boxArea.innerHTML = "";
+}
+
+function addBlureffectToCards(cards){
+  console.log("Adding blur effect");
   for (let i = 0; i < cards.length; i++) {
-    getDrink(cards[i]);
     cards[i].addEventListener("mouseover", () => {blurOtherCards(i)})
+    console.log("Adding mouseover");
     cards[i].addEventListener("mouseleave", () => {removeBlurOtherCards(i)})
+    console.log("Adding mouseleave");
   }
   
   function blurOtherCards(hoveredCard){
@@ -96,4 +112,9 @@ window.addEventListener("load", () =>{
       cards[i].classList.remove("blurred");
     }
   }
+}
+
+window.addEventListener("load", () =>{
+  let cards = addDrinks(10);
+  addBlureffectToCards(cards);
 })
