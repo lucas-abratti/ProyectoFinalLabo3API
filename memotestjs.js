@@ -11,23 +11,6 @@ closeMenu.addEventListener("click", function () {
 });
 
 //API
-let cards = document.getElementsByClassName("box");
-
-function getDrink(box) {
-  var url = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      var drinkImg = box.querySelector(".card-img");
-      drinkImg.src = data.drinks[0].strDrinkThumb;
-    });
-}
-
-for (let i = 0; i < cards.length; i++) {
-  getDrink(cards[i]);
-}
-
 let iconos = [];
 let selecciones = [];
 let movimientos = 0;
@@ -37,43 +20,42 @@ let mostrarMovimientos = document.getElementById("movimientos");
 
 generarTablero();
 
-function cargarIconos() {
-  iconos = [
-    '<img src="public/memotestImg/1.jpg" alt="">',
-    '<img src="public/memotestImg/2.jpg" alt="">',
-    '<img src="public/memotestImg/3.jpg" alt="">',
-    '<img src="public/memotestImg/4.jpg" alt="">',
-    '<img src="public/memotestImg/5.jpg" alt="">',
-    '<img src="public/memotestImg/6.jpg" alt="">',
-    '<img src="public/memotestImg/7.jpg" alt="">',
-    '<img src="public/memotestImg/8.jpg" alt="">',
-  ];
+async function cargarIconos(){
+  for(let i = 0; i < 8; i++){
+    var url = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+    
+    await fetch(url).then((response) => response.json())
+    .then((data) => {
+      let icono = `<img src="${data.drinks[0].strDrinkThumb}" alt="">`;
+      console.log(icono);
+      iconos.push(icono);
+    });
+  }
+  return true;
 }
 
-function generarTablero() {
+async function generarTablero() {
   movimientos = 0;
   mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
-  cargarIconos();
+  await cargarIconos();
   selecciones = [];
   let tablero = document.getElementById("tablero");
   let tarjetas = [];
-  for (let i = 0; i < cantidadTarjetas; i++) {
+  for (let i = 0; i < 16; i++) {
+    let index = i < iconos.length ? i : i - iconos.length
+    console.log(index);
     tarjetas.push(`
       <div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
         <div class="tarjeta" id="tarjeta${i}">
           <div class="cara trasera" id="trasera${i}">
-            ${iconos[0]}
+            ${iconos[index]}
           </div>
           <div class="cara superior">
             <img src="public/memotestImg/question-solid.svg" alt="">
           </div>
         </div>
       </div>
-      `);
-
-    if (i % 2 == 1) {
-      iconos.splice(0, 1);
-    }
+    `);
   }
   tarjetas.sort(() => Math.random() - 0.5);
   tablero.innerHTML = tarjetas.join(" ");
