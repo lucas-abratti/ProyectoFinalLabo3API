@@ -92,9 +92,9 @@ function addDrinks(nDrinks){
     let card = document.createElement("div");
     card.classList.add("box");
     card.innerHTML = `
-    <img class="card-img" src="public/negroni.jpg" alt="Negroni" />
+    <img class="card-img" src="public/negroni.jpg" alt="imagen del Cocktail" />
     <div class="overlay">
-    <h3>Negroni</h3>
+    <h3></h3>
     <p class="drink-ingredients"></p>
     </div>`;
     cards.push(card);

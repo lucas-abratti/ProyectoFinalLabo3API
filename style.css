@@ -85,7 +85,7 @@ body {
 .ul-nav {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: auto;
 }
 
@@ -129,7 +129,7 @@ body {
   width: 200px;
   justify-content: center;
   color: var(--first-text-color);
-  border: none;
+  border: solid 1px var(--first-text-color);
   padding: 10px;
   border-radius: 5px;
   font-size: 0.75em;
@@ -140,6 +140,7 @@ body {
   background: var(--third-color);
   color: var(--first-color);
   transition: all 0.5s;
+  border: solid 1px var(--third-color);
 }
 /*TEXTOS Y VIDEO INICIO*/
 
@@ -165,7 +166,7 @@ main {
 }
 
 .seccion-video h1 {
-  padding-top: 200px;
+  padding-top: 150px;
   font-size: 2em;
   font-family: 'Bungee Spice';
   font-size: 3em;
@@ -199,6 +200,7 @@ main {
 
 .content-wrapper p {
   padding-left: 50px;
+  text-shadow: 0 0 2px #fff;
 }
 
 .video-wrapper {
@@ -314,6 +316,7 @@ main {
   width: 70%;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .apiBtn{
@@ -324,6 +327,7 @@ main {
   width: 10%;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
   font-weight: 900;
   font-size: larger;
   color: var(--second-text-color)
@@ -397,7 +401,22 @@ footer {
     display: none;
   }
 }
+@media (max-width: 560px) {
+  .content-wrapper h1 {
+    font-size: 1.7em;
+    padding-left: 10px;
+    padding-top: 80px;
+    text-align: center;
+  }
+  .content-wrapper p {
+    font-size: 1em;
+    padding-left: 15px;
+  }
+  #tablero{
+    grid-column-gap:0px;
+  }
 
+}
 @media (max-width: 460px) {
   .content-wrapper {
     text-align: center;
@@ -419,6 +438,14 @@ footer {
 
   .drink-ingredients {
     font-size: 0.95em;
+  }
+  .content-wrapper h1{
+    padding-left: 0px;
+    padding-top: 60px;
+    font-size: 1.3em;
+  }
+  .content-wrapper p{
+    padding-left: 0px;
   }
 }
 
