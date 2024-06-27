@@ -217,16 +217,6 @@ main {
   padding: 2px;
 }
 
-#refresDrinksBtn{
-  outline: revert;
-  background-color: var(--second-color);
-  padding: 10px;
-  margin: auto;
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-}
-
 .header-cards h2{
   margin-bottom: 20px;
 }
@@ -300,6 +290,34 @@ main {
 .box:hover .overlay {
   height: 100%;
 
+}
+
+.btnContainer{
+  display: flex;
+  padding: 10px;
+}
+
+#refresDrinksBtn{
+  outline: revert;
+  background-color: var(--second-color);
+  padding: 10px;
+  margin: auto;
+  width: 70%;
+  border: none;
+  border-radius: 10px;
+}
+
+.apiBtn{
+  outline: revert;
+  background-color: var(--second-color);
+  padding: 10px;
+  margin: auto;
+  width: 10%;
+  border: none;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: larger;
+  color: var(--second-text-color)
 }
 
 /*FOOTER*/

@@ -4,19 +4,37 @@ const menu = document.querySelector('.menu');
 
 const boxArea = document.querySelector('.box-area');
 const drinksBtn = document.querySelector('#refresDrinksBtn');
+const addDrinksBtn = document.querySelector('#addDrinksTot');
+const removeDrinksBtn = document.querySelector('#removeDrinksTot');
+
+let amountOfDrinks = 10;
 
 openMenu.addEventListener("click", function() {
-  menu.style.display = 'flex'
-})
+  menu.style.display = 'flex';
+});
 
 closeMenu.addEventListener("click", function() {
-  menu.style.display = 'none'
-})
+  menu.style.display = 'none';
+});
 
 drinksBtn.addEventListener("click", () => {
   resetCards();
-  addBlureffectToCards(addDrinks(10));
-})
+  addBlureffectToCards(addDrinks(amountOfDrinks));
+});
+
+addDrinksBtn.addEventListener("click", () => {
+  if(amountOfDrinks < 20){
+    amountOfDrinks += 1;
+  }
+  drinksBtn.innerText = `Get ${amountOfDrinks} random drinks`;
+});
+
+removeDrinksBtn.addEventListener("click", () => {
+  if(amountOfDrinks > 1){
+    amountOfDrinks -= 1;
+  }
+  drinksBtn.innerText = `Get ${amountOfDrinks} random drinks`;
+});
 
 window.addEventListener("load", () =>{
   console.log("Fetching colors");
@@ -79,7 +97,6 @@ function addDrinks(nDrinks){
     <p class="drink-ingredients"></p>
     </div>`;
     cards.push(card);
-    console.log("Card pushed")
     boxArea.appendChild(card);
     getDrink(cards[i]);
   }
@@ -94,9 +111,7 @@ function addBlureffectToCards(cards){
   console.log("Adding blur effect");
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("mouseover", () => {blurOtherCards(i)})
-    console.log("Adding mouseover");
     cards[i].addEventListener("mouseleave", () => {removeBlurOtherCards(i)})
-    console.log("Adding mouseleave");
   }
   
   function blurOtherCards(hoveredCard){
