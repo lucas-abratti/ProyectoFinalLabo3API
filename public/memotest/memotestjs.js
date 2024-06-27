@@ -37,7 +37,7 @@ async function cargarIconos(){
 async function generarTablero() {
   movimientos = 0;
   iconos = [];
-  mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
+  mostrarMovimientos.innerHTML = `Movements: ${movimientos}`;
   await cargarIconos();
   selecciones = [];
   let tablero = document.getElementById("tablero");
@@ -70,7 +70,7 @@ function seleccionarTarjeta(i) {
   }
   if (selecciones.length == 2) {
     movimientos++;
-    mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
+    mostrarMovimientos.innerHTML = `Movements: ${movimientos}`;
     deseleccionar(selecciones);
     selecciones = [];
   }
@@ -92,8 +92,8 @@ function deseleccionar(selecciones) {
 
     if (verificarFin()) {
       swal.fire({
-        title: `Felicitaciones has ganado!`,
-        text: `Movimientos necesarios: ${movimientos}`,
+        title: `Congrats! You win!`,
+        text: `Movements needed: ${movimientos}`,
         icon: `success`,
       });
     }
